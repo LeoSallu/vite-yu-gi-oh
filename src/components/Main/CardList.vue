@@ -1,6 +1,16 @@
 <script>
+import CardElement from './CardElement.vue';
+import { store } from '../../store';
 export default {
-
+   
+    components: { 
+        CardElement 
+    },
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 <template>
@@ -9,17 +19,13 @@ export default {
             <h5>Found 39 cards</h5>
         </div>
         <div class="row">
-            <div class="col">
+            <div v-for="card in store.cards" class="col">
                 <!-- Card  -->
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                <CardElement 
+                :img="card.card_images[0].image_url"
+                :name="card.name"
+                :type="card.type"
+                />
                 <!-- /Card  -->
             </div>
         </div>
@@ -39,5 +45,8 @@ export default {
             color: white;
         }
     }
+}
+.card-body{
+    background-color: $primary;
 }
 </style>

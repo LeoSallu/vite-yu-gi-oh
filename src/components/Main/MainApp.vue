@@ -1,11 +1,17 @@
 <script>
 import DropdownApp from './DropdownApp.vue';
 import CardList from './CardList.vue';
+import { store } from '../../store';
 export default {
     components:{
         DropdownApp,
         CardList
-    }
+    },
+    data() {
+        return {
+            store,
+        }
+}
 }
 </script>
 <template>
