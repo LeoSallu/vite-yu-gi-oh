@@ -21,11 +21,11 @@ import { store } from '../../store';
     }
 </script>
 <template>
-    <div class="card g-2 mt-2" style="width: 18rem;">
+    <div class="card text-bg-primary my-2" style="width: 18rem;">
         <img :src="img" class="card-img-top" alt="card">
-        <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{type}}</p>
+        <div class="card-body p-4">
+            <h5 class="card-title text-light">{{name}}</h5>
+            <small class="card-text">{{type}}</small>
         </div>
     </div>
 </template>

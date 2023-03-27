@@ -14,12 +14,12 @@ export default {
 }
 </script>
 <template>
-    <div class="container p-5">
-        <div id="black_bg" class="row">
-            <h5>Found 39 cards</h5>
-        </div>
-        <div class="row">
-            <div v-show="loaded=true" v-for="card in store.cards" class="col">
+    <div class="container">
+        <div class="row p-2">
+            <div id="black_bg" class="p-3">
+            <h5>Found {{store.cards.length}} cards</h5>
+            </div>
+            <div v-show="loaded=true" v-for="(card,index) in (store.cards).slice(0,20)" class="col">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"
@@ -32,7 +32,6 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
-@use '../../assets-styles/main.scss' as *;
 @use '../../assets-styles/_partials/variable.scss' as *;
 
 .container {

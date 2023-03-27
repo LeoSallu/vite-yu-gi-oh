@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    characters:[],
-    charactersFound: 0
+    cards:[],
+    cardsFound: 0
 })
