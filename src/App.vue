@@ -25,6 +25,8 @@ import MainApp from './components/Main/MainApp.vue';
                 })
         }
 }
+
+
 </script>
 <!-- My Html -->
 <template>

@@ -19,7 +19,7 @@ export default {
             <h5>Found 39 cards</h5>
         </div>
         <div class="row">
-            <div v-for="card in store.cards" class="col">
+            <div v-show="loaded=true" v-for="card in store.cards" class="col">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"
@@ -47,6 +47,6 @@ export default {
     }
 }
 .card-body{
-    background-color: $primary;
+    background-color: $primary ;
 }
 </style>

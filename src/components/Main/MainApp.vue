@@ -28,6 +28,5 @@ export default {
 
 main {
     background-color: $primary;
-    height: 90vh;
 }
 </style>
