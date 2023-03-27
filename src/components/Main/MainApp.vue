@@ -11,15 +11,17 @@ export default {
         return {
             store,
         }
-}
+    }
 }
 </script>
 <template>
     <main>
+        <div class="container p-4">
         <!-- Dropdown menu  -->
-        <DropdownApp />
+            <DropdownApp />
         <!-- Card List  -->
-        <CardList />
+            <CardList />
+        </div>
     </main>
 </template>
 <style lang="scss" scoped>

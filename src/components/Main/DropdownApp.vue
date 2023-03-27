@@ -4,7 +4,7 @@ export default{
 }
 </script>
 <template>
-    <div class="dropdown-center">
+    <div class="dropdown-center my-3">
             <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
                 Alien
             </button>

@@ -4,22 +4,26 @@ import { store } from '../../store';
 export default {
    
     components: { 
-        CardElement 
+        CardElement
     },
     data(){
         return{
-            store
+            store,
+            loaded:false
         }
+    },
+    mounted(){
+            this.loaded=true
     }
 }
 </script>
 <template>
     <div class="container">
-        <div class="row p-2">
+        <div class="row">
             <div id="black_bg" class="p-3">
-            <h5>Found {{store.cards.length}} cards</h5>
+                <h5>Found {{store.cards.length}} cards</h5>
             </div>
-            <div v-show="loaded=true" v-for="(card,index) in (store.cards).slice(0,20)" class="col">
+            <div v-for="card in (store.cards).slice(0,20)" class="col">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"
@@ -28,6 +32,9 @@ export default {
                 />
                 <!-- /Card  -->
             </div>
+            <!-- Animazione Caricamento  -->
+            <!-- <LoadingAnimation v-show="loaded=false"/> -->
+            <!-- /Animazione Caricamento -->
         </div>
     </div>
 </template>
