@@ -18,12 +18,12 @@ export default {
 }
 </script>
 <template>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div id="black_bg" class="p-3">
                 <h5>Found {{store.cards.length}} cards</h5>
             </div>
-            <div v-for="card in (store.cards).slice(20,40)" class="col-3">
+            <div v-for="card in (store.cards).slice(20,40)" class="col">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"
@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 @use '../../assets-styles/_partials/variable.scss' as *;
 
-.container-fluid {
+.container {
     background-color: white;
 
     #black_bg {
