@@ -11,14 +11,18 @@ export default {
         return {
             store,
         }
-    }
-}
+    },
+        methods: {
+            handleSelect(){
+                this.$emit('select');
+            }
+}}
 </script>
 <template>
     <main>
         <div class="container p-4">
         <!-- Dropdown menu  -->
-            <DropdownApp />
+            <DropdownApp @select="handleSelect"/>
         <!-- Card List  -->
             <CardList />
         </div>

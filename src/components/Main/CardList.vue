@@ -21,9 +21,9 @@ export default {
     <div class="container-fluid">
         <div class="row">
             <div id="black_bg" class="p-3">
-                <h5>Found {{store.cards.length}} cards</h5>
+                <h5>Found {{store.cardsFound}} cards</h5>
             </div>
-            <div v-for="card in (store.cards).slice(20,40)" class="col-3">
+            <div v-for="card in (store.cards).slice(0,100)" class="col-3">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"

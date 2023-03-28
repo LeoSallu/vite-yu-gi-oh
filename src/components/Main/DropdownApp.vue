@@ -1,20 +1,16 @@
 <script>
 import { store } from '../../store';
-export default{
-    data(){
-        return{
+export default {
+    data() {
+        return {
             store
         }
     }
 }
 </script>
 <template>
-    <div class="dropdown-center my-3">
-            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
-               Scegli la tua carta
-            </button>
-            <ul class="dropdown-menu">
-                <li v-for="card in (store.cards).slice(20,40)"><a class="dropdown-item" href="#">{{card.name}}</a></li>
-            </ul>
-        </div>
+    <select class="form-select w-25" v-model="store.cardType" @select.prevent="$emit('handleSelect')">
+        <option selected>Select your type</option>
+        <option v-for="(type,index) in store.cardType" :value="index">{{type.archetype_name}}</option>
+    </select>
 </template>

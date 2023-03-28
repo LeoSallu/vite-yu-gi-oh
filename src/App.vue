@@ -17,12 +17,22 @@ import MainApp from './components/Main/MainApp.vue';
         }
         
     },
-    created(){
+    methods:{
+        select(){
             // API 
             axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
                 .then((response) => {
                     this.store.cards = response.data.data;
+                    this.store.cardsFound = response.data.data.length;
+                }),
+                axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+                .then((response) => {
+                    this.store.cardType = response.data.archetype_name;
                 })
+        }
+    },
+    created(){
+           this.select();
         }
 }
 
@@ -31,7 +41,7 @@ import MainApp from './components/Main/MainApp.vue';
 <!-- My Html -->
 <template>
     <HeaderApp />
-    <MainApp />
+    <MainApp/>
 </template>
 <!-- My Scss -->
 <style lang="scss" scoped>
