@@ -23,12 +23,13 @@ export default {
             <div id="black_bg" class="p-3">
                 <h5>Found {{store.cards.length}} cards</h5>
             </div>
-            <div v-for="card in (store.cards).slice(0,20)" class="col">
+            <div v-for="card in (store.cards).slice(20,40)" class="col">
                 <!-- Card  -->
                 <CardElement 
                 :img="card.card_images[0].image_url"
                 :name="card.name"
                 :type="card.type"
+                :price="card.card_prices[0].cardmarket_price"
                 />
                 <!-- /Card  -->
             </div>
